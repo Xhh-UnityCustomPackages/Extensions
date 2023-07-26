@@ -1,7 +1,9 @@
 {
     "name": "NewAssembly",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:1a9448441200731419929c056267cb94"
+    ],
     "includePlatforms": [
         "Editor"
     ],
