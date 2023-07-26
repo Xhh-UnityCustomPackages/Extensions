@@ -4,7 +4,7 @@ using UnityEngine;
 using System.IO;
 
 
-public class PathHelper
+public static class PathHelper
 {
     public static string ABSPath2AssetsPath(string absPath)
     {
