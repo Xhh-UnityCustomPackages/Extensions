@@ -10,26 +10,27 @@ public static class ComputeShaderHelper
         return System.Runtime.InteropServices.Marshal.SizeOf(typeof(T));
     }
 
-    public static void CreateArgsBuffer(ref ComputeBuffer buffer, int count)
+    public static void CreateComputeBuffer(ref ComputeBuffer buffer, int count, int stride, ComputeBufferType type)
     {
-        int stride = count * sizeof(uint);
         bool createNewBuffer = buffer == null || !buffer.IsValid() || buffer.count != count || buffer.stride != stride;
         if (createNewBuffer)
         {
             Release(buffer);
-            buffer = new ComputeBuffer(1, stride, ComputeBufferType.IndirectArguments);
+            buffer = new ComputeBuffer(count, stride, type);
         }
     }
+
+    public static void CreateArgsBuffer(ref ComputeBuffer buffer, int count)
+    {
+        int stride = count * sizeof(uint);
+        CreateComputeBuffer(ref buffer, count, stride, ComputeBufferType.IndirectArguments);
+    }
+
 
     public static void CreateStructuredBuffer<T>(ref ComputeBuffer buffer, int count)
     {
         int stride = GetStride<T>();
-        bool createNewBuffer = buffer == null || !buffer.IsValid() || buffer.count != count || buffer.stride != stride;
-        if (createNewBuffer)
-        {
-            Release(buffer);
-            buffer = new ComputeBuffer(count, stride);
-        }
+        CreateComputeBuffer(ref buffer, count, stride, ComputeBufferType.Structured);
     }
 
     public static void CreateStructuredBuffer<T>(ref ComputeBuffer buffer, T[] data)
