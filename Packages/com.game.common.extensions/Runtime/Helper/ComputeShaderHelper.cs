@@ -20,6 +20,12 @@ public static class ComputeShaderHelper
         }
     }
 
+    public static void CreateComputeBuffer<T>(ref ComputeBuffer buffer, int count, ComputeBufferType type)
+    {
+        CreateComputeBuffer(ref buffer, count, GetStride<T>(), type);
+    }
+
+
     public static void CreateArgsBuffer(ref ComputeBuffer buffer, int count)
     {
         int stride = count * sizeof(uint);
@@ -29,8 +35,7 @@ public static class ComputeShaderHelper
 
     public static void CreateStructuredBuffer<T>(ref ComputeBuffer buffer, int count)
     {
-        int stride = GetStride<T>();
-        CreateComputeBuffer(ref buffer, count, stride, ComputeBufferType.Structured);
+        CreateComputeBuffer<T>(ref buffer, count, ComputeBufferType.Structured);
     }
 
     public static void CreateStructuredBuffer<T>(ref ComputeBuffer buffer, T[] data)
