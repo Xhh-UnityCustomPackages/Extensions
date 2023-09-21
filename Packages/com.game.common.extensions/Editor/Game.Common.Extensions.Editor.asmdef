@@ -1,5 +1,5 @@
 {
-    "name": "NewAssembly",
+    "name": "Game.Common.Extensions.Editor",
     "rootNamespace": "",
     "references": [
         "GUID:1a9448441200731419929c056267cb94"
