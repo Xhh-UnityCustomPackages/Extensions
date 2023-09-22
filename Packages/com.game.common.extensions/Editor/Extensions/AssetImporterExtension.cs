@@ -5,7 +5,7 @@ using UnityEditor;
 
 public static partial class AssetImporterExtensions
 {
-    public static void CopyTo(TextureImporter textureImporter, TextureImporter targetImporter)
+    public static void CopyTo(this TextureImporter textureImporter, TextureImporter targetImporter)
     {
         targetImporter.mipmapEnabled = textureImporter.mipmapEnabled;
         targetImporter.mipMapBias = textureImporter.mipMapBias;
@@ -36,7 +36,7 @@ public static partial class AssetImporterExtensions
         targetImporter.SaveAndReimport();
     }
 
-    public static void CopyTo(ModelImporter modelImporter, ModelImporter targetImporter)
+    public static void CopyTo(this ModelImporter modelImporter, ModelImporter targetImporter)
     {
         targetImporter.animationCompression = modelImporter.animationCompression;
         targetImporter.animationType = modelImporter.animationType;
@@ -49,7 +49,7 @@ public static partial class AssetImporterExtensions
         targetImporter.SaveAndReimport();
     }
 
-    public static void CopyTo(AudioImporter audioImporter, AudioImporter targetImporter)
+    public static void CopyTo(this AudioImporter audioImporter, AudioImporter targetImporter)
     {
         targetImporter.ambisonic = audioImporter.ambisonic;
         targetImporter.forceToMono = audioImporter.forceToMono;
