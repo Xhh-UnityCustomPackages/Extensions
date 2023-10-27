@@ -33,7 +33,7 @@ public static partial class AssetImporterExtensions
         originiPhoneSetting.CopyTo(targetiPhoneSetting);
         originStandaloneSetting.CopyTo(targetStandaloneSetting);
 
-        targetImporter.SaveAndReimport();
+        // targetImporter.SaveAndReimport();
     }
 
     public static void CopyTo(this ModelImporter modelImporter, ModelImporter targetImporter)
@@ -46,7 +46,7 @@ public static partial class AssetImporterExtensions
         targetImporter.optimizeMeshPolygons = modelImporter.optimizeMeshPolygons;
 
 
-        targetImporter.SaveAndReimport();
+        // targetImporter.SaveAndReimport();
     }
 
     public static void CopyTo(this AudioImporter audioImporter, AudioImporter targetImporter)
@@ -63,6 +63,6 @@ public static partial class AssetImporterExtensions
         targetDefaultSetting.loadType = originnDefaultSetting.loadType;
         targetDefaultSetting.quality = originnDefaultSetting.quality;
 
-        targetImporter.SaveAndReimport();
+        // targetImporter.SaveAndReimport();
     }
 }
