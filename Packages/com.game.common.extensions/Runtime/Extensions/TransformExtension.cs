@@ -301,4 +301,14 @@ public static class TransformExtension
     }
 
 
+    public static void SetLayerRecursively(this Transform transform, int layer)
+    {
+        transform.gameObject.layer = layer;
+
+        foreach (Transform t in transform)
+        {
+            SetLayerRecursively(t, layer);
+        }
+    }
+
 }

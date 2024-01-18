@@ -4,19 +4,27 @@ using UnityEngine;
 
 public static class MeshHelper
 {
-    public static Mesh CreateGridMesh(int xSize, int ySize, float gridSize)
+    public static Mesh CreateGridMesh(int xSize, int ySize, float gridSize, bool needUV = false)
     {
         Mesh mesh = new Mesh();
+        var vertices = new Vector3[(xSize + 1) * (ySize + 1)];
+        Vector4[] tangents = new Vector4[vertices.Length];
+        Vector4 tangent = new Vector4(1f, 0f, 0f, -1f);
+        Vector2[] uvs = null;
 
-        Vector3[] vertices = new Vector3[(xSize + 1) * (ySize + 1)];
+        if (needUV) uvs = new Vector2[vertices.Length];
+
+        Vector3 centerPos = new Vector3(xSize * gridSize * 0.5f, 0, ySize * gridSize * 0.5f);
+
         for (int i = 0, y = 0; y <= ySize; y++)
         {
             for (int x = 0; x <= xSize; x++, i++)
             {
-                vertices[i] = new Vector3(gridSize * x, 0, gridSize * y);
+                vertices[i] = new Vector3(x * gridSize, 0, y * gridSize) - centerPos;
+                tangents[i] = tangent;
+                if (needUV) uvs[i] = new Vector2((float)x / xSize, (float)y / ySize);
             }
         }
-        mesh.vertices = vertices;
 
         int[] triangles = new int[xSize * ySize * 6];
         for (int ti = 0, vi = 0, y = 0; y < ySize; y++, vi++)
@@ -29,7 +37,13 @@ public static class MeshHelper
                 triangles[ti + 5] = vi + xSize + 2;
             }
         }
+
+        mesh.vertices = vertices;
         mesh.triangles = triangles;
+        mesh.tangents = tangents;
+        if (needUV) mesh.uv = uvs;
+        mesh.name = "Procedural Grid";
+        mesh.RecalculateNormals();
         return mesh;
     }
 }
