@@ -13,7 +13,14 @@ public static class TextureHelper
     {
         var previousRT = RenderTexture.active;
         RenderTexture.active = rt;
-        Texture2D tex = new Texture2D(rt.width, rt.height, TextureFormat.RGBA32, false);
+        TextureFormat textureFormat;
+        switch (rt.format)
+        {
+            case RenderTextureFormat.R16: textureFormat = TextureFormat.R16; break;
+            case RenderTextureFormat.R8: textureFormat = TextureFormat.R8; break;
+            default: textureFormat = TextureFormat.RGBA32; break;
+        }
+        Texture2D tex = new Texture2D(rt.width, rt.height, textureFormat, false);
         tex.ReadPixels(new Rect(0, 0, rt.width, rt.height), 0, 0);
         tex.Apply(true);
 
