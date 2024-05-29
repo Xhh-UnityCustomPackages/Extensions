@@ -20,9 +20,10 @@ public static class TextureHelper
             case RenderTextureFormat.R8: textureFormat = TextureFormat.R8; break;
             default: textureFormat = TextureFormat.RGBA32; break;
         }
-        Texture2D tex = new Texture2D(rt.width, rt.height, textureFormat, false);
+        bool hasMipmap = rt.useMipMap;
+        Texture2D tex = new Texture2D(rt.width, rt.height, textureFormat, hasMipmap);
         tex.ReadPixels(new Rect(0, 0, rt.width, rt.height), 0, 0);
-        tex.Apply(true);
+        tex.Apply(hasMipmap);
 
         RenderTexture.active = previousRT;
         return tex;
