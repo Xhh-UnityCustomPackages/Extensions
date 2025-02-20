@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Aya.Extension
+namespace Game
 {
     public static partial class BoundsExtension
     {

@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Aya.Extension
+namespace Game
 {
     public enum SortMode
     {

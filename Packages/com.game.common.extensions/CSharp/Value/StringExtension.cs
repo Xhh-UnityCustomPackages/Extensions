@@ -6,7 +6,7 @@ using System.IO.Compression;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Aya.Extension
+namespace Game
 {
     public static class StringExtension
     {

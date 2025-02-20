@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace Aya.Extension
+namespace Game
 {
     public static class FileInfoExtension
     {

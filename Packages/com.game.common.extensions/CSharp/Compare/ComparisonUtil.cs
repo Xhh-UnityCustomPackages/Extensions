@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Aya.Extension
+namespace Game
 {
     public static partial class ComparisonUtil
     {

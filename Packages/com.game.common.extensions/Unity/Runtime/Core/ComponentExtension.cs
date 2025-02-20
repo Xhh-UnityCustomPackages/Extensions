@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using UnityEngine;
 
-namespace Aya.Extension
+namespace Game
 {
     public static class ComponentExtension
     {

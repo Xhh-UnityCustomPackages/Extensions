@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-namespace Aya.Extension
+namespace Game
 {
     public static class MemberInfoExtension
     {

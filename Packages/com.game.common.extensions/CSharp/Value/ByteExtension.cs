@@ -5,7 +5,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Aya.Extension
+namespace Game
 {
     public static partial class ByteExtension
     {

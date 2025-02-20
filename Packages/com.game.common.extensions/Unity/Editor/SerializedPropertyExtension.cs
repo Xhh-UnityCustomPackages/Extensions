@@ -3,7 +3,7 @@ using System;
 using System.Reflection;
 using UnityEditor;
 
-namespace Aya.Extension
+namespace Game
 {
     public static class SerializedPropertyExtension
     {

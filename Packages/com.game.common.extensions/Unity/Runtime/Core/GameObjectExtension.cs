@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace Aya.Extension
+namespace Game
 {
     public static class GameObjectExtension
     {

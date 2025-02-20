@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Rendering;
 
-namespace Aya.Extension
+namespace Game
 {
     public static class ShaderExtension
     {

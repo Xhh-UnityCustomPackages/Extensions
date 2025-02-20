@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
-namespace Aya.Extension
+namespace Game
 {
     public static class AwaiterExtension
     {

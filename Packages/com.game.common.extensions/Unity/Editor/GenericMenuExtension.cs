@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Aya.Extension
+namespace Game
 {
     public static class GenericMenuExtension
     {

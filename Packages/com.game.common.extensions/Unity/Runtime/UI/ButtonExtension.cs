@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Aya.Extension
+namespace Game
 {
     public static class ButtonExtension
     {

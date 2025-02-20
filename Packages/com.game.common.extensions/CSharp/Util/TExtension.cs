@@ -2,7 +2,7 @@
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace Aya.Extension
+namespace Game
 {
     public static class TExtension
     {

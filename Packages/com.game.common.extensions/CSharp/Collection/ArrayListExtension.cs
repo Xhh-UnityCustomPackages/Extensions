@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 
-namespace Aya.Extension
+namespace Game
 {
     public static partial class ArrayListExtension
     {

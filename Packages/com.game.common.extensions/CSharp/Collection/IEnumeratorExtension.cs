@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-namespace Aya.Extension
+namespace Game
 {
     public static class IEnumeratorExtension
     {

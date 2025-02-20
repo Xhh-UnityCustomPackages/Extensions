@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Aya.Extension
+namespace Game
 {
     public static class HashSetExtension
     {

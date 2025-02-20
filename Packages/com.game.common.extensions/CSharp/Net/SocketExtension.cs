@@ -1,6 +1,6 @@
 ﻿using System.Net.Sockets;
 
-namespace Aya.Extension
+namespace Game
 {
     public static class SocketExtension
     {

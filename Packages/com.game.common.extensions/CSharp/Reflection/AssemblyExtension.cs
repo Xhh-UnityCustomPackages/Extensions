@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace Aya.Extension
+namespace Game
 {
     public static partial class AssemblyExtension
     {

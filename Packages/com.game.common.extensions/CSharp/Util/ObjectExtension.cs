@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Reflection;
 
-namespace Aya.Extension
+namespace Game
 {
     public static class ObjectExtension
     {

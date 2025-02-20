@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace Aya.Extension
+namespace Game
 {
     public static class TilemapExtension
     {
