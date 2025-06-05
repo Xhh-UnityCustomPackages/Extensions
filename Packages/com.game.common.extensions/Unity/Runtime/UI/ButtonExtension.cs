@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace Game
@@ -34,6 +35,13 @@ namespace Game
             var cb = button.colors;
             cb.disabledColor = color;
             button.colors = cb;
+            return button;
+        }
+
+        public static Button SetClickListener(this Button button, UnityAction action)
+        {
+            button.onClick.RemoveAllListeners();
+            button.onClick.AddListener(action);
             return button;
         }
     }

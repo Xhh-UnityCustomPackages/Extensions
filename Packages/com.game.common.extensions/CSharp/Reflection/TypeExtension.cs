@@ -315,5 +315,23 @@ namespace Game
         }
 
         #endregion
+
+        /// <summary>
+        /// 获取类型的继承链
+        /// </summary>
+        public static string[] GetInheritanceChain(this Type type, bool fullName = true)
+        {
+            var inheritanceChain = new List<string>();
+            var currentType = type;
+
+            while (currentType != null)
+            {
+                var name = fullName ? currentType.FullName : currentType.Name;
+                inheritanceChain.Add(name);
+                currentType = currentType.BaseType;
+            }
+
+            return inheritanceChain.ToArray();
+        }
     }
 }
